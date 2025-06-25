@@ -13,7 +13,8 @@ async def main():
     #report a message
     print(f'{time.ctime()}main coroutine started')
     #start many tasks
-    started_tasks = [asyncio.create_task(downlonad_image(i,i))for i in range(3)]
+    
+    started_tasks = [asyncio.create_task(downlonad_image(i,i))for i in range(2,-1,-1)]
     #allow some of the time to start
     await asyncio.sleep(0.1)
     for task in started_tasks:
