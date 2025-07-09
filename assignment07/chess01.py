@@ -1,7 +1,7 @@
 import time  
 from datetime import timedelta  
   
-speed = 10000  # speed  
+speed = 10000# speed  
 Judit_time = 5/speed  # Judit time move  
 Opponent_time = 55/speed # Opponent time move  
 opponents = 24 # Number of opponnents  
@@ -17,9 +17,9 @@ def game(x):
         print(f"BOARD-{x+1} {i+1} Judit made a move with {int(Judit_time*speed)} secs.")  
   
     # The opponent thinks for 5 seconds.  
-    time.sleep(Opponent_time)  
-    print(f"BOARD-{x+1} {i+1} Opponent made move with {int(Opponent_time*speed)} secs.")  
-    calculated_board_start_time = calculated_board_start_time + Opponent_time  
+        time.sleep(Opponent_time)  
+        print(f"BOARD-{x+1} {i+1} Opponent made move with {int(Opponent_time*speed)} secs.")  
+        calculated_board_start_time = calculated_board_start_time + Opponent_time  
     print(f"BOARD-{x+1} >>>>>>>>>>>>>>>>> Finished move in {(time.perf_counter() - board_start_time)*speed:.1f} secs")  
     print(f"BOARD-{x+1} >>>>>>>>>>>>>>>>> Finished move in {calculated_board_start_time*speed:.1f} secs (calculated)\n")  
     return {  
