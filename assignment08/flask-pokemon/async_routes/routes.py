@@ -18,7 +18,7 @@ async def get_pokemon(url):
 async def get_pokemons():
     NUMBER_OF_POKEMON = current_app.config["NUMBER_OF_POKEMON"]
 
-    rand_list = [random.randint(0, 300) for _ in range(NUMBER_OF_POKEMON)]
+    rand_list = [random.randint(1, 300) for _ in range(NUMBER_OF_POKEMON)]
 
     
     
@@ -31,15 +31,15 @@ async def get_pokemons():
     
 # Route: GET /
 @async_bp.route('/')
-def home():
+async def home():
     start_time = time.perf_counter()
-
-    pokemons = asyncio.run(get_pokemons())  # ✅ await async fetch
+    pokemons = await get_pokemons() 
+    #pokemons = asyncio.run(get_pokemons())  # ✅ await async fetch
 
     end_time = time.perf_counter()
     print(f"{time.ctime()} - Get {len(pokemons)} pokemon. Time taken: {end_time - start_time:.2f} seconds")
 
-    return render_template('sync.html',
+    return render_template('async.html',
                            title="pokemon Asynchronous Flask",
                            heading="pokemon Asynchronous Version",
                            pokemons=pokemons,

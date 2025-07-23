@@ -17,7 +17,7 @@ def get_pokemon(url):
 def get_pokemons():
     NUMBER_OF_POKEMON = current_app.config["NUMBER_OF_POKEMON"]
 
-    rand_list = [random.randint(0, 300) for _ in range(NUMBER_OF_POKEMON)]
+    rand_list = [random.randint(1, 300) for _ in range(NUMBER_OF_POKEMON)]
 
     
     
