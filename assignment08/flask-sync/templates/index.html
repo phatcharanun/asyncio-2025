@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask + Semantic UI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+</head>
+<body>
+
+<div class="ui container" style="margin-top: 50px;">
+    <h1 class="ui header">Hello, {{ name }}!</h1>
+    <div class="ui message">
+        <p>This is a simple Flask app styled with <strong>Semantic UI</strong>.</p>
+    </div>
+
+    <form action="/hello" method="get" class="ui form">
+        <div class="field">
+            <label>Enter your name</label>
+            <input type="text" name="name" placeholder="Your name...">
+        </div>
+        <button class="ui primary button" type="submit">Say Hello</button>
+    </form>
+</div>
+
+</body>
+</html>

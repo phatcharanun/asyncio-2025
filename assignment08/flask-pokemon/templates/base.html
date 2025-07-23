@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}"
+</head>
+<body>
+    <div class="ui inverted segment">
+        <h1 class="ui yellow header">{{ heading }}</h1>
+        <h4 class="ui grey header">| <a href="http://127.0.0.1:50000">Home</a> | <a href="http://127.0.0.1:50000/sync">Pokemon Flask Synchronous</a> | <a href="http://127.0.0.1:50000/async">Pokemon Flask Asynchronous</a></h4>
+        <h5 class="ui grey header">Get {{pokemons|length}} pokemons. Time taken: {{ end_time-start_time }} seconds</h5>
+    </div>
+    <div id="container">
+        {% block content %}{% endblock %}
+    </div>
+    
+</body>
+</html>
