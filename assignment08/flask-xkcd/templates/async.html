@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="xkcd-container" class="ui four doubling cards">
+    {% for xkcd in xkcds: %}
+    <div class="ui card">
+            <img class="ui image" src="{{ xkcd['img'] }}">
+        <div class="content">
+            <h4 class="header"><strong>{{ xkcd['title'] }}</strong>
+                <div class="sub header"></div>
+            </h4>
+            <div class="summary">
+                {{ xkcd['alt'] }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
