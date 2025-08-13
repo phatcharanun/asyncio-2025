@@ -39,7 +39,7 @@ async def home():
     end_time = time.perf_counter()
     print(f"{time.ctime()} - Get {len(xkcds)} xkcd. Time taken: {end_time - start_time:.2f} seconds")
 
-    return render_template('sync.html',
+    return render_template('async.html',
                            title="XKCD Asynchronous Flask",
                            heading="XKCD Asynchronous Version",
                            xkcds=xkcds,
