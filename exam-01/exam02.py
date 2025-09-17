@@ -9,14 +9,17 @@
 
 import asyncio
 
-async def fetch_data():
-    await asyncio.sleep(2)
-    return "data"
+# async def fetch_data():
+#     textData = "Data" 
+#     await asyncio.sleep(2)
+#     #return "data"
 
 async def process():
-    data = await fetch_data()
-    print("Processing", data)
-
-tasks = [process() for _ in range(5)]
-asyncio.run(tasks)
+    # data = await fetch_data()
+    print(f'Processing data')
+async def main():
+    tasks = asyncio.gather(*[process() for _ in range(5)])
+    await asyncio.sleep(1)
+   # tasks = [process() for _ in range(5)]
+asyncio.run(main())
 
