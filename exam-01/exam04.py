@@ -18,5 +18,6 @@ async def main():
     await asyncio.gather(task("A"), task("B"))
     print("All tasks done")
 
-asyncio.run(main)
+#asyncio.run(main)
+asyncio.run(main())
 
