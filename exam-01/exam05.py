@@ -10,8 +10,12 @@ import asyncio
 async def countdown(n):
     while n > 0:
         print("T-minus", n)
-        asyncio.sleep(1)
+        #asyncio.sleep(1)
+        await asyncio.sleep(1)
         n -= 1
 
-asyncio.run(countdown(3))
+async def main():
+    await countdown(3)
+
+asyncio.run(main())
 
