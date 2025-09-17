@@ -11,6 +11,7 @@ async def fire_rocket(name: str, t0: float):
     time_to_target = None
 
 
+
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as resp:
             data = await resp.json()
@@ -23,6 +24,7 @@ async def fire_rocket(name: str, t0: float):
             "time_to_target": time_to_target,
             "end_time": end_time
         }
+    print(f)
     """
     TODO:
     - ส่ง GET request ไปยัง rocketapp ที่ path /fire/{student_id}
@@ -66,6 +68,7 @@ async def main():
 
 
     # TODO: แสดงเวลารวมทั้งหมดตั้งแต่ยิงลูกแรกจนลูกสุดท้ายถึงจุดหมาย
+    
 
     t_total = 0  # คำนวณ max end_time
     print(f"\nTotal time for all rockets: {t_total:.2f} sec")

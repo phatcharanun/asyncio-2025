@@ -10,8 +10,8 @@ import asyncio
 async def fetch(url):
     session = aiohttp.ClientSession()   # ไม่ปิด
     async with session.get(url) as resp:
-        
         return await resp.text()
+    await session.close()                # ปิดช้าไป
 
 async def main():
     html = await fetch("https://example.com")
